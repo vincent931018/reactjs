@@ -28,6 +28,7 @@ module.exports = {
         colors: true
     },
     plugins: [ //插件
+        //html生成 js引入工具
         new HtmlwebpackPlugin({
             title: 'ReactJs Demo',
             template: path.resolve(__dirname, 'src/index.html'),
@@ -35,11 +36,13 @@ module.exports = {
             inject: 'body'
         }),
 
+        //公用的js包
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
             filename: "vendor.js"
         }),
 
+        //复制文件夹到打包文件夹
         new CopyWebpackPlugin([
             {from: path.resolve(__dirname, 'src/img'), to: path.resolve(__dirname, 'dist/img')}
         ])
