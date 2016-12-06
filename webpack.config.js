@@ -45,14 +45,14 @@ module.exports = {
         //复制文件夹到打包文件夹
         new CopyWebpackPlugin([
             {from: path.resolve(__dirname, 'src/img'), to: path.resolve(__dirname, 'dist/img')}
-        ])
+        ]),
 
-        // //定义全局环境
-        // new webpack.DefinePlugin({
-        //     __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
-        //     __PROD__: JSON.stringify(JSON.parse(process.env.BUILD_PROD || 'false')),
-        //     __LOCAL__: JSON.stringify(JSON.parse(process.env.BUILD_LOCAL || 'false'))
-        // })
+        //定义全局环境
+        new webpack.DefinePlugin({
+            __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
+            __PROD__: JSON.stringify(JSON.parse(process.env.BUILD_PROD || 'false')),
+            __LOCAL__: JSON.stringify(JSON.parse(process.env.BUILD_LOCAL || 'false'))
+        })
     ],
     module: {
         loaders: [{

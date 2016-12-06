@@ -21,7 +21,9 @@
   "homepage": "https://github.com/cwc845982120/react-demo#readme",
   "dependencies": {
     "babel-preset-react": "^6.16.0",
+    "es6-promise": "^4.0.5",
     "eslint": "^3.11.1",
+    "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "webpack": "^1.13.3",
