@@ -41,7 +41,7 @@ module.exports = {
             filename: "js/vendor.js"
         }),
 
-        new ExtractTextPlugin("css/styles.css")
+        new ExtractTextPlugin("css/main.css")
 
     ],
     module: {
@@ -66,9 +66,13 @@ module.exports = {
             loader: 'file?name=img/[name]-[hash].[ext]'
         },{
             test: /\.scss$/,
+            exclude: /node_modules/,
+            include: /src/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
         },{
             test:/\.(eot|ttf|woff|woff2|svg)$/,
+            exclude: /node_modules/,
+            include: /src/,
             loader:'file?name=fonts/[name]-[hash].[ext]'
         }],
         eslint: {

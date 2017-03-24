@@ -1,3 +1,7 @@
+/**
+ * @author caowencheng <845982120@qq.com>
+ * created on 24.03.2017
+ */
 import React from 'react';
 
 const textStyle = {

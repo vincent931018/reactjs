@@ -18,11 +18,9 @@ webpackJsonp([0],[
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _text = __webpack_require__(244);
+	var _text = __webpack_require__(242);
 
 	var _text2 = _interopRequireDefault(_text);
-
-	__webpack_require__(238);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5141,10 +5139,6 @@ webpackJsonp([0],[
 
 	__webpack_require__(238);
 
-	__webpack_require__(243);
-
-	__webpack_require__(241);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5189,8 +5183,7 @@ webpackJsonp([0],[
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					null,
-					_react2.default.createElement(Hello, null),
+					{ className: 'container' },
 					'Hello World!!!',
 					_react2.default.createElement('br', null),
 					'\u6B22\u8FCE\u6765\u5230',
@@ -5212,29 +5205,6 @@ webpackJsonp([0],[
 		}]);
 
 		return App;
-	}(_react2.default.Component);
-
-	var Hello = function (_React$Component2) {
-		_inherits(Hello, _React$Component2);
-
-		function Hello() {
-			_classCallCheck(this, Hello);
-
-			return _possibleConstructorReturn(this, (Hello.__proto__ || Object.getPrototypeOf(Hello)).apply(this, arguments));
-		}
-
-		_createClass(Hello, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					null,
-					'\u6211\u7231\u5B66\u4E60\uFF01'
-				);
-			}
-		}]);
-
-		return Hello;
 	}(_react2.default.Component);
 
 	;
@@ -32610,20 +32580,8 @@ webpackJsonp([0],[
 /***/ },
 /* 239 */,
 /* 240 */,
-/* 241 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "img/reactjs-f47abcd5573ca539561e2903bf25e9cc.png";
-
-/***/ },
-/* 242 */,
-/* 243 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "fonts/huakang-c06bf2a56c3b0e45d52cd4548acd9ca7.ttf";
-
-/***/ },
-/* 244 */
+/* 241 */,
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
