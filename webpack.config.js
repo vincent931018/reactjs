@@ -1,21 +1,20 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/index.js',
+        index: './src/index.jsx',
         vendor: ['react', 'react-dom'] //需要进库的插件包
     },
     output: {
-        path: path.resolve(__dirname, 'dist/js'),
-        filename: '[name].[hash].js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].js'
     },
-    resolve: {  //别名
-        extensions: ['.js', ''],
-        alias:{
-        }
+    resolve: {
+        extensions: ['scss','jsx','.js', ''],//默认扩展名
+        alias: {}//默认绝对路径
     },
     // dev server
     devServer: {
@@ -32,48 +31,49 @@ module.exports = {
         new HtmlwebpackPlugin({
             title: 'ReactJs Demo',
             template: path.resolve(__dirname, 'src/index.html'),
-            filename: '../index.html',
+            filename: 'index.html',
             inject: 'body'
         }),
 
         //公用的js包
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
-            filename: "vendor.js"
+            filename: "js/vendor.js"
         }),
 
-        //复制文件夹到打包文件夹
-        new CopyWebpackPlugin([
-            {from: path.resolve(__dirname, 'src/img'), to: path.resolve(__dirname, 'dist/img')}
-        ]),
+        new ExtractTextPlugin("css/styles.css")
 
-        //定义全局环境
-        new webpack.DefinePlugin({
-            __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'false')),
-            __PROD__: JSON.stringify(JSON.parse(process.env.BUILD_PROD || 'false')),
-            __LOCAL__: JSON.stringify(JSON.parse(process.env.BUILD_LOCAL || 'false'))
-        })
     ],
     module: {
         loaders: [{
             test: /\.js$/,
+            exclude: /node_modules/,
+            include: /src/,
             loaders: ['babel?presets[]=es2015'],
             exclude: /node_modules/
         }, {
-            test: /\.css$/,
-            loaders: ['style', 'css'],
-            loader: 'style!css!autoprefixer?{browsers:["last 2 version", "> 1%"]}'
-        }, {
             test: /\.jsx?$/,
             exclude: /node_modules/,
+            include: /src/,
             loader: 'babel',
             query: {
                 presets: ['es2015', 'react']
             }
+        }, {
+            test: /\.(png|jpg|gif)$/,
+            exclude: /node_modules/,
+            include: /src/,
+            loader: 'file?name=img/[name]-[hash].[ext]'
+        },{
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+        },{
+            test:/\.(eot|ttf|woff|woff2|svg)$/,
+            loader:'file?name=fonts/[name]-[hash].[ext]'
         }],
         eslint: {
             configFile: '.eslintrc' //Rules for eslint
         },
-        devtool: 'eval-source-map'
+        devtool: 'cheap-source-map'
     }
 }
