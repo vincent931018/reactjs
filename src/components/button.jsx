@@ -4,24 +4,19 @@
  */
 import React from 'react';
 
-const textStyle = {
-    background: '#CCC',
-    borderRadius: '5px',
-    width: '100px'
-}
+import '../assets/scss/button.scss';
 
-class Text extends React.Component {
+class Button extends React.Component {
     handleClick(){
-   		window.location.hash = '#/';
+   		window.location.hash = 'button';
     }
     render() {
         return (
-        <div>
-            Hello World!!!<br />
-            <div onClick = {this.handleClick} style = {textStyle} >跳至index</div>
+        <div className = "button">
+            <div onClick = {this.handleClick}>{ this.props.name }</div>
         </div>
         );
     }
 }
 
-export default Text;
+export default Button;

@@ -5,11 +5,12 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: {
-        index: './src/index.jsx',
+        index: path.resolve(__dirname,'src/index.jsx'),
         vendor: ['react', 'react-dom'] //需要进库的插件包
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
+        //publicPath: './',
         filename: 'js/[name].js'
     },
     resolve: {
@@ -41,7 +42,7 @@ module.exports = {
             filename: "js/vendor.js"
         }),
 
-        new ExtractTextPlugin("css/main.css")
+        new ExtractTextPlugin("main.css")
 
     ],
     module: {
@@ -63,7 +64,7 @@ module.exports = {
             test: /\.(png|jpg|gif)$/,
             exclude: /node_modules/,
             include: /src/,
-            loader: 'file?name=img/[name]-[hash].[ext]'
+            loader: 'file?name=img/[name].[ext]'
         },{
             test: /\.scss$/,
             exclude: /node_modules/,
@@ -73,7 +74,7 @@ module.exports = {
             test:/\.(eot|ttf|woff|woff2|svg)$/,
             exclude: /node_modules/,
             include: /src/,
-            loader:'file?name=fonts/[name]-[hash].[ext]'
+            loader:'url?limit=8192&name=fonts/[name].[ext]'
         }],
         eslint: {
             configFile: '.eslintrc' //Rules for eslint

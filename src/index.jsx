@@ -14,7 +14,6 @@ ReactDOM.render((
     <Route path="/">
         <IndexRoute component={App}/>
         <Route path="index" component={App}/>
-        <Route path="text" component={Text}/>
         <Redirect from='**' to='index'/>
     </Route>
   </Router>

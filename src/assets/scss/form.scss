@@ -1,1 +1,42 @@
-html,body,div{margin: 0;border: 0;padding: 0;}
+$color-white: #fff;
+
+.form{
+    position: absolute;
+    padding-left: 2rem;
+    top: 50%;
+    height: 15rem;
+    width: 100%;
+    width: 80%;
+    margin-left: 10%;
+    border: 0.1rem $color-white solid;
+    border-radius: 2rem;
+    box-sizing: border-box;
+    font-size: 2rem;
+    .userName{
+        height: 7.5rem;
+        line-height: 7.5rem;
+        color: green;
+    }
+    .password{
+        height: 7.5rem;
+        line-height: 7.5rem;
+        color: red;
+    }
+    .font{
+        width: 30%;
+        height: 7.5rem;
+        float: left;
+    }
+    input{
+        height: 4rem;
+        font-size: 1.5rem;
+        width: 60%;
+        outline: none;
+        border: 0;
+        border-radius: 1rem;
+        padding-left: 1rem;
+    }
+    ::-webkit-input-placeholder {
+        font-family: huakang;
+    }
+}

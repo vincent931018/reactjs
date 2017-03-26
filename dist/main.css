@@ -1,0 +1,84 @@
+.form {
+  position: absolute;
+  padding-left: 2rem;
+  top: 50%;
+  height: 15rem;
+  width: 100%;
+  width: 80%;
+  margin-left: 10%;
+  border: 0.1rem #fff solid;
+  border-radius: 2rem;
+  box-sizing: border-box;
+  font-size: 2rem; }
+  .form .userName {
+    height: 7.5rem;
+    line-height: 7.5rem;
+    color: green; }
+  .form .password {
+    height: 7.5rem;
+    line-height: 7.5rem;
+    color: red; }
+  .form .font {
+    width: 30%;
+    height: 7.5rem;
+    float: left; }
+  .form input {
+    height: 4rem;
+    font-size: 1.5rem;
+    width: 60%;
+    outline: none;
+    border: 0;
+    border-radius: 1rem;
+    padding-left: 1rem; }
+  .form ::-webkit-input-placeholder {
+    font-family: huakang; }
+.button {
+  position: absolute;
+  width: 80%;
+  height: 5rem;
+  margin-left: 10%;
+  bottom: 10%;
+  font-size: 3rem;
+  line-height: 5rem;
+  text-align: center;
+  border-radius: 1.5rem;
+  background-color: #6FE2F7; }
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: #222222; }
+  .container img {
+    width: 20rem;
+    height: 15rem;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    margin-left: -10rem; }
+  .container .subtitle {
+    width: 80%;
+    padding: 0 10% 0 10%;
+    text-align: center;
+    font-size: 2rem;
+    position: absolute;
+    color: #fff;
+    top: 35%; }
+html,
+body,
+div {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%; }
+
+@font-face {
+  font-family: huakang;
+  src: url(fonts/huakang.ttf); }
+
+#app {
+  font-family: huakang;
+  height: 100%;
+  width: 100%; }

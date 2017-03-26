@@ -6,10 +6,16 @@ div {
     padding: 0;
 }
 html,body{
+    font-size: 62.5%;
     height: 100%;
     width: 100%;
 }
+@font-face{
+    font-family: huakang;
+    src: url('../fonts/huakang.ttf');
+}
 #app{
+    font-family: huakang;
     height: 100%;
     width: 100%;
 }

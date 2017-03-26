@@ -1,12 +1,25 @@
-$background-color: #f5f5f5;
+$background-color: #222222;
+$color-white: #fff;
 
 .container{
     height: 100%;
     width: 100%;
     background-color: $background-color;
     img{
-        width: 200px;
-        height: 150px;
+        width: 20rem;
+        height: 15rem;
         position: absolute;
+        top: 8%;
+        left: 50%;
+        margin-left: -10rem;
+    }
+    .subtitle{
+        width: 80%;
+        padding: 0 10% 0 10%;
+        text-align: center;
+        font-size: 2rem;
+        position: absolute;
+        color: $color-white;
+        top: 35%;
     }
 }

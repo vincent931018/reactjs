@@ -18,9 +18,7 @@ webpackJsonp([0],[
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _text = __webpack_require__(242);
-
-	var _text2 = _interopRequireDefault(_text);
+	__webpack_require__(249);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32,10 +30,12 @@ webpackJsonp([0],[
 	    { path: '/' },
 	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _app2.default }),
 	    _react2.default.createElement(_reactRouter.Route, { path: 'index', component: _app2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: 'text', component: _text2.default }),
 	    _react2.default.createElement(_reactRouter.Redirect, { from: '**', to: 'index' })
 	  )
-	), document.getElementById('app'));
+	), document.getElementById('app')); /**
+	                                     * @author caowencheng <845982120@qq.com>
+	                                     * created on 24.03.2017
+	                                     */
 
 /***/ },
 /* 1 */,
@@ -5137,7 +5137,15 @@ webpackJsonp([0],[
 
 	var _fetch = __webpack_require__(234);
 
-	__webpack_require__(238);
+	var _form = __webpack_require__(238);
+
+	var _form2 = _interopRequireDefault(_form);
+
+	var _button = __webpack_require__(243);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	__webpack_require__(246);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5145,19 +5153,11 @@ webpackJsonp([0],[
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author caowencheng <845982120@qq.com>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * created on 24.03.2017
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-	var btn = {
-		background: '#ccc',
-		borderRadius: '3px',
-		width: '50px',
-		textAlign: 'center'
-	};
-
-	var obj = {
-		name: 'cwc',
-		age: '24'
-	};
 
 	var App = function (_React$Component) {
 		_inherits(App, _React$Component);
@@ -5169,37 +5169,19 @@ webpackJsonp([0],[
 		}
 
 		_createClass(App, [{
-			key: 'handleClick',
-			value: function handleClick() {
-				(0, _fetch.fetchData)('checkBlackList', obj);
-			}
-		}, {
-			key: 'handleClick2',
-			value: function handleClick2() {
-				window.location.hash = '#/text';
-			}
-		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
 					{ className: 'container' },
-					'Hello World!!!',
-					_react2.default.createElement('br', null),
-					'\u6B22\u8FCE\u6765\u5230',
-					this.props.name,
-					'\u7684\u5B66\u4E60\uFF01\uFF01!',
-					_react2.default.createElement('br', null),
+					_react2.default.createElement('img', { src: __webpack_require__(248) }),
 					_react2.default.createElement(
 						'div',
-						{ onClick: this.handleClick, style: btn },
-						'Fetch'
+						{ className: 'subtitle' },
+						'Welcome to learning for Reactjs!'
 					),
-					_react2.default.createElement(
-						'div',
-						{ onClick: this.handleClick2, style: btn },
-						'\u8DF3\u81F3Text'
-					)
+					_react2.default.createElement(_form2.default, null),
+					_react2.default.createElement(_button2.default, { name: '\u786E\u8BA4' })
 				);
 			}
 		}]);
@@ -5234,6 +5216,10 @@ webpackJsonp([0],[
 	    return obj && obj.__esModule ? obj : { default: obj };
 	}
 
+	/**
+	 * @author caowencheng <845982120@qq.com>
+	 * created on 24.03.2017
+	 */
 	var baseUrl = "http://192.168.0.108:8093/mock/";
 
 	var config = {
@@ -32573,15 +32559,91 @@ webpackJsonp([0],[
 
 /***/ },
 /* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	__webpack_require__(239);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author caowencheng <845982120@qq.com>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * created on 24.03.2017
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+	var Form = function (_React$Component) {
+	  _inherits(Form, _React$Component);
+
+	  function Form() {
+	    _classCallCheck(this, Form);
+
+	    return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).apply(this, arguments));
+	  }
+
+	  _createClass(Form, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'form' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'userName' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'font' },
+	            '\u767B\u5F55\u540D:'
+	          ),
+	          _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u7528\u6237\u540D/\u624B\u673A\u53F7', maxLength: '11' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'password' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'font' },
+	            '\u5BC6\u7801:'
+	          ),
+	          _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u5BC6\u7801' })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Form;
+	}(_react2.default.Component);
+
+	;
+
+	exports.default = Form;
+
+/***/ },
+/* 239 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ },
-/* 239 */,
 /* 240 */,
 /* 241 */,
-/* 242 */
+/* 242 */,
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32596,55 +32658,79 @@ webpackJsonp([0],[
 
 	var _react2 = _interopRequireDefault(_react);
 
+	__webpack_require__(244);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author caowencheng <845982120@qq.com>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * created on 24.03.2017
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
-	var textStyle = {
-	    background: '#CCC',
-	    borderRadius: '5px',
-	    width: '100px'
-	};
 
-	var Text = function (_React$Component) {
-	    _inherits(Text, _React$Component);
+	var Button = function (_React$Component) {
+	    _inherits(Button, _React$Component);
 
-	    function Text() {
-	        _classCallCheck(this, Text);
+	    function Button() {
+	        _classCallCheck(this, Button);
 
-	        return _possibleConstructorReturn(this, (Text.__proto__ || Object.getPrototypeOf(Text)).apply(this, arguments));
+	        return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
 	    }
 
-	    _createClass(Text, [{
+	    _createClass(Button, [{
 	        key: 'handleClick',
 	        value: function handleClick() {
-	            window.location.hash = '#/';
+	            window.location.hash = 'button';
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                null,
-	                'Hello World!!!',
-	                _react2.default.createElement('br', null),
+	                { className: 'button' },
 	                _react2.default.createElement(
 	                    'div',
-	                    { onClick: this.handleClick, style: textStyle },
-	                    '\u8DF3\u81F3index'
+	                    { onClick: this.handleClick },
+	                    this.props.name
 	                )
 	            );
 	        }
 	    }]);
 
-	    return Text;
+	    return Button;
 	}(_react2.default.Component);
 
-	exports.default = Text;
+	exports.default = Button;
+
+/***/ },
+/* 244 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 245 */,
+/* 246 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 247 */,
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "img/reactjs.png";
+
+/***/ },
+/* 249 */
+/***/ function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
 
 /***/ }
 ]);
