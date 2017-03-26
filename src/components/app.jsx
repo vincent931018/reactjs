@@ -15,7 +15,7 @@ class App extends React.Component {
 		return (
 			<div className = "container">
 				<img src = { require('../assets/img/reactjs.png') }/>
-				<div className = "subtitle">Welcome to learning for Reactjs!</div>
+				<div className = "subtitle">Welcome to learning for Reactjs!!!</div>
 				<Form/>
 				<Button name = "确认"/>
 			</div>

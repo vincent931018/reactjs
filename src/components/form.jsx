@@ -12,11 +12,11 @@ class Form extends React.Component {
 			<div className = "form">
                 <div className = "userName">
                     <div className = "font">登录名:</div>
-                    <input placeholder= "请输入用户名/手机号" maxLength = "11"/>
+                    <input type = "tel" autoComplete = "off" placeholder= "请输入用户名/手机号" maxLength = "11"/>
                 </div>
                 <div className = "password">
                     <div className = "font">密码:</div>
-                    <input placeholder= "请输入密码"/>
+                    <input type = "password" autoComplete = "off" placeholder= "请输入密码"/>
                 </div>
 			</div>
 		);
