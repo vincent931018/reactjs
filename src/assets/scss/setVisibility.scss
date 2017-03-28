@@ -1,0 +1,25 @@
+.setVisibility{
+    position: absolute;
+    bottom: 4rem;
+    height: 6rem;
+    width: 100%;
+    padding-left: 2rem;
+    .type{
+        width: 100%;
+        height: 6rem;
+        padding-top: 1rem;
+    }
+    .item{
+        float: left;
+        line-height: 4rem;
+        font-size: 2rem;
+        letter-spacing: -0.1rem;
+    }
+    .item_detail{
+        border: 0.1rem #222222 solid;
+        border-radius: 1.5rem;
+        padding: 0 0.5rem 0 0.5rem;
+        margin-left: 1rem;
+    }
+}
+

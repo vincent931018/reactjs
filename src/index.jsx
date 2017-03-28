@@ -6,6 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { IndexRoute, Redirect, Router, Route, hashHistory } from 'react-router';
 import App from './components/app.jsx';
+import AddTodo from './components/AddTodo.jsx';
 
 import './assets/scss/_main.scss';
 
@@ -14,6 +15,7 @@ ReactDOM.render((
     <Route path="/">
         <IndexRoute component={App}/>
         <Route path="index" component={App}/>
+        <Route path="addTodo" component={AddTodo}/>
         <Redirect from='**' to='index'/>
     </Route>
   </Router>

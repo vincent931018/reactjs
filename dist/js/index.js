@@ -18,7 +18,7 @@ webpackJsonp([0],[
 
 	var _app2 = _interopRequireDefault(_app);
 
-	__webpack_require__(249);
+	__webpack_require__(241);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5126,7 +5126,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-		value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -5141,11 +5141,9 @@ webpackJsonp([0],[
 
 	var _form2 = _interopRequireDefault(_form);
 
-	var _button = __webpack_require__(243);
+	var _button = __webpack_require__(239);
 
 	var _button2 = _interopRequireDefault(_button);
-
-	__webpack_require__(246);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -5160,33 +5158,48 @@ webpackJsonp([0],[
 
 
 	var App = function (_React$Component) {
-		_inherits(App, _React$Component);
+	    _inherits(App, _React$Component);
 
-		function App() {
-			_classCallCheck(this, App);
+	    function App(props) {
+	        _classCallCheck(this, App);
 
-			return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-		}
+	        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
-		_createClass(App, [{
-			key: 'render',
-			value: function render() {
-				return _react2.default.createElement(
-					'div',
-					{ className: 'container' },
-					_react2.default.createElement('img', { src: __webpack_require__(248) }),
-					_react2.default.createElement(
-						'div',
-						{ className: 'subtitle' },
-						'Welcome to learning for Reactjs!'
-					),
-					_react2.default.createElement(_form2.default, null),
-					_react2.default.createElement(_button2.default, { name: '\u786E\u8BA4' })
-				);
-			}
-		}]);
+	        _this.state = {
+	            userName: "",
+	            passWord: ""
+	        };
+	        _this.getValue = _this.getValue.bind(_this);
+	        return _this;
+	    }
 
-		return App;
+	    _createClass(App, [{
+	        key: 'getValue',
+	        value: function getValue(userName, passWord) {
+	            this.setState({
+	                userName: userName,
+	                passWord: passWord
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'container' },
+	                _react2.default.createElement('img', { src: __webpack_require__(240) }),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'subtitle' },
+	                    ' Welcome to learning for Reactjs!!! '
+	                ),
+	                _react2.default.createElement(_form2.default, { getValue: this.getValue }),
+	                _react2.default.createElement(_button2.default, { handleValue: this.state })
+	            );
+	        }
+	    }]);
+
+	    return App;
 	}(_react2.default.Component);
 
 	;
@@ -32561,10 +32574,10 @@ webpackJsonp([0],[
 /* 238 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -32572,8 +32585,6 @@ webpackJsonp([0],[
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(239);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32588,45 +32599,62 @@ webpackJsonp([0],[
 
 
 	var Form = function (_React$Component) {
-	  _inherits(Form, _React$Component);
+	    _inherits(Form, _React$Component);
 
-	  function Form() {
-	    _classCallCheck(this, Form);
+	    function Form(props) {
+	        _classCallCheck(this, Form);
 
-	    return _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).apply(this, arguments));
-	  }
+	        var _this = _possibleConstructorReturn(this, (Form.__proto__ || Object.getPrototypeOf(Form)).call(this, props));
 
-	  _createClass(Form, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'form' },
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'userName' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'font' },
-	            '\u767B\u5F55\u540D:'
-	          ),
-	          _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u7528\u6237\u540D/\u624B\u673A\u53F7', maxLength: '11' })
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'password' },
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'font' },
-	            '\u5BC6\u7801:'
-	          ),
-	          _react2.default.createElement('input', { placeholder: '\u8BF7\u8F93\u5165\u5BC6\u7801' })
-	        )
-	      );
+	        _this.state = {
+	            userName: "",
+	            passWord: ""
+	        };
+	        _this.handleData = _this.handleData.bind(_this);
+	        return _this;
 	    }
-	  }]);
 
-	  return Form;
+	    _createClass(Form, [{
+	        key: "handleData",
+	        value: function handleData() {
+	            var data = {
+	                userName: this.refs.userName.value,
+	                passWord: this.refs.passWord.value
+	            };
+	            this.setState(data);
+	            this.props.getValue(data.userName, data.passWord);
+	        }
+	    }, {
+	        key: "render",
+	        value: function render() {
+	            return _react2.default.createElement(
+	                "div",
+	                { className: "formArea" },
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "userName" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "font" },
+	                        "\u767B\u5F55\u540D:"
+	                    ),
+	                    _react2.default.createElement("input", { type: "tel", autoComplete: "off", ref: "userName", placeholder: "\u8BF7\u8F93\u5165\u624B\u673A\u53F7", minLength: "11", maxLength: "11", onChange: this.handleData, defaultValue: this.state.userName })
+	                ),
+	                _react2.default.createElement(
+	                    "div",
+	                    { className: "password" },
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "font" },
+	                        "\u5BC6\u7801:"
+	                    ),
+	                    _react2.default.createElement("input", { type: "password", autoComplete: "new-password", ref: "passWord", placeholder: "\u8BF7\u8F93\u5165\u5BC6\u7801", onChange: this.handleData, defaultValue: this.state.passWord })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Form;
 	}(_react2.default.Component);
 
 	;
@@ -32635,18 +32663,9 @@ webpackJsonp([0],[
 
 /***/ },
 /* 239 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -32657,8 +32676,6 @@ webpackJsonp([0],[
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
-
-	__webpack_require__(244);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32675,27 +32692,58 @@ webpackJsonp([0],[
 	var Button = function (_React$Component) {
 	    _inherits(Button, _React$Component);
 
-	    function Button() {
+	    function Button(props) {
 	        _classCallCheck(this, Button);
 
-	        return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).call(this, props));
+
+	        _this.state = {
+	            isLogin: false,
+	            text: "未登录",
+	            userName: _this.props.handleValue.userName
+	        };
+	        _this.checkChangeCb = _this.checkChangeCb.bind(_this);
+	        return _this;
 	    }
 
 	    _createClass(Button, [{
-	        key: 'handleClick',
-	        value: function handleClick() {
-	            window.location.hash = 'button';
+	        key: "checkChangeCb",
+	        value: function checkChangeCb() {
+	            if (!this.props.handleValue.userName) {
+	                alert("请输入正确的用户名！");
+	                return;
+	            } else if (!this.props.handleValue.passWord) {
+	                alert("请输入正确的密码！");
+	                return;
+	            } else if (this.props.handleValue.userName === this.state.userName && this.state.isLogin) {
+	                alert("您已登录！");
+	                return;
+	            } else if (this.props.handleValue.userName != this.state.userName && this.state.isLogin) {
+	                this.setState({
+	                    isLogin: true,
+	                    text: "已登录",
+	                    userName: this.props.handleValue.userName
+	                });
+	                alert("您切换账号成功！");
+	                return;
+	            } else {
+	                this.setState({
+	                    isLogin: true,
+	                    text: "已登录",
+	                    userName: this.props.handleValue.userName
+	                });
+	            }
 	        }
 	    }, {
-	        key: 'render',
+	        key: "render",
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
-	                { className: 'button' },
+	                "div",
+	                { className: "button" },
 	                _react2.default.createElement(
-	                    'div',
-	                    { onClick: this.handleClick },
-	                    this.props.name
+	                    "div",
+	                    { onClick: this.checkChangeCb },
+	                    this.state.text
 	                )
 	            );
 	        }
@@ -32707,27 +32755,13 @@ webpackJsonp([0],[
 	exports.default = Button;
 
 /***/ },
-/* 244 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 245 */,
-/* 246 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
-
-/***/ },
-/* 247 */,
-/* 248 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "img/reactjs.png";
 
 /***/ },
-/* 249 */
+/* 241 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

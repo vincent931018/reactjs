@@ -6,7 +6,9 @@ var fs = require('fs');
 var $ = require('gulp-load-plugins')();
 
 var _modules = [
-    'test'
+    'addTodoBtn',
+    'addTodoList',
+    'setVisibility'
 ];
 
 /**

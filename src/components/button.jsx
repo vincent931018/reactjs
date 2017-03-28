@@ -9,7 +9,6 @@ class Button extends React.Component {
         super(props);
         this.state = {
             isLogin : false,
-            text : "未登录",
             userName: this.props.handleValue.userName
         }
         this.checkChangeCb = this.checkChangeCb.bind(this);
@@ -21,29 +20,18 @@ class Button extends React.Component {
         }else if(!this.props.handleValue.passWord){
             alert("请输入正确的密码！");
             return;
-        }else if((this.props.handleValue.userName === this.state.userName)&& this.state.isLogin){
-            alert("您已登录！");
-            return;
-        }else if((this.props.handleValue.userName != this.state.userName)&& this.state.isLogin){
-            this.setState ({
-                isLogin : true,
-                text : "已登录",
-                userName: this.props.handleValue.userName
-            });
-            alert("您切换账号成功！");
-            return;
         }else{
             this.setState ({
                 isLogin : true,
-                text : "已登录",
                 userName: this.props.handleValue.userName
             });
+            window.location.hash = "AddTodo";
         }
     }
     render() {
         return (
         <div className = "button">
-            <div onClick = {this.checkChangeCb}>{ this.state.text }</div>
+            <div onClick = {this.checkChangeCb}>{ this.props.text }</div>
         </div>
         );
     }

@@ -29,7 +29,7 @@ class App extends React.Component {
             	<img src = { require('../assets/img/reactjs.png') }/>
             	<div className = "subtitle" > Welcome to learning for Reactjs!!! </div>
             	<Form getValue = { this.getValue }/>
-            	<Button handleValue = { this.state }/>
+            	<Button text = "登录" handleValue = { this.state }/>
             </div>
         );
     }
