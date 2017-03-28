@@ -19,3 +19,11 @@ html,body{
     height: 100%;
     width: 100%;
 }
+
+//定义scss全局变量
+$background-color: #222222;
+$color-white: #fff;
+
+@import './app.scss';
+@import './button.scss';
+@import './form.scss';

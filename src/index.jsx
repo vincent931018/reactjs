@@ -4,7 +4,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { IndexRoute, Redirect, Router, Route, hashHistory, DefaultRoute } from 'react-router';
+import { IndexRoute, Redirect, Router, Route, hashHistory } from 'react-router';
 import App from './components/app.jsx';
 
 import './assets/scss/_main.scss';

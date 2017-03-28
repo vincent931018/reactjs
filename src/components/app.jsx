@@ -8,19 +8,31 @@ import { fetchData } from '../common/fetch';
 import Form from './form.jsx';
 import Button from './button.jsx';
 
-import '../assets/scss/app.scss';
-
 class App extends React.Component {
-	render() {
-		return (
-			<div className = "container">
-				<img src = { require('../assets/img/reactjs.png') }/>
-				<div className = "subtitle">Welcome to learning for Reactjs!!!</div>
-				<Form/>
-				<Button name = "确认"/>
-			</div>
-		);
-	}
+    constructor(props) {
+        super(props);
+        this.state = {
+            userName: "",
+            passWord: ""
+        }
+        this.getValue = this.getValue.bind(this);
+    }
+    getValue(userName, passWord) {
+        this.setState({
+            userName: userName,
+            passWord: passWord
+        });
+    }
+    render() {
+        return (
+        	<div className = "container" >
+            	<img src = { require('../assets/img/reactjs.png') }/>
+            	<div className = "subtitle" > Welcome to learning for Reactjs!!! </div>
+            	<Form getValue = { this.getValue }/>
+            	<Button handleValue = { this.state }/>
+            </div>
+        );
+    }
 };
 
 export default App;

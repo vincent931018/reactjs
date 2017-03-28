@@ -1,5 +1,5 @@
 #Reactjs-Demo
-	利用webpack快速构建reactjs项目
+	利用webpack快速构建reactjs项目<br/>
     技术栈：reactjs、webpack、sass、ES6、commonjs
 
     #常见问题
