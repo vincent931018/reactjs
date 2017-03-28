@@ -30,7 +30,7 @@ class Form extends React.Component {
                 </div>
                 <div className = "password">
                     <div className = "font">密码:</div>
-                    <input type = "password" autoComplete = "off" ref = "passWord" placeholder= "请输入密码" onChange = { this.handleData } defaultValue = { this.state.passWord }/>
+                    <input type = "password" autoComplete = "new-password" ref = "passWord" placeholder= "请输入密码" onChange = { this.handleData } defaultValue = { this.state.passWord }/>
                 </div>
 			</div>
 		);
