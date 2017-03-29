@@ -3,41 +3,30 @@
  * created on 28.03.2017
  */
 import React from 'react';
+import { createStore } from 'redux';
+import { connect } from 'react-redux';
+import todoApp from '../reducers/index';
+import { addTodo } from '../action/actions';
 
-let idCount = 0;
+let input;
+let store = createStore(todoApp);
 
 class AddTodoBtn extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            items : []
-        };
-        this.addItem = this.addItem.bind(this);
-    }
-    addItem(data) {
-        if(this.refs.item_val.value){
-            var newData = {
-                'id' : idCount++,
-                'text' : this.refs.item_val.value,
-                'isComplated' : 'noComplated',
-                'visibility' : 'block'
-            }
-            //this.state.items.push(newData);
-            //var cur_items = this.state.items
-            this.props.handleData(newData);
-            this.refs.item_val.value = "";
-        }else{
-            alert("请输入正确的待办事项！");
+    addTodo() {
+        if(input.value){
+            store.dispatch(addTodo(input.value));
+            console.log(store.getState());
         }
     }
     render() {
         return (
-            <div className = "addTodoBtn">
-                <input ref = "item_val" className = "add_value"/>
-                <div className = "add_waitDo" onClick = { this.addItem }>添加待办</div>
+            <div className = "addTodoBtn" >
+                <input ref = { node => { input = node } } className = "add_value" />
+                <div className = "add_waitDo" onClick = { this.addTodo } > 添加待办</div>
             </div>
         );
     }
-};
+}
 
+AddTodoBtn = connect()(AddTodoBtn);
 export default AddTodoBtn;

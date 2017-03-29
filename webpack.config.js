@@ -6,7 +6,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         index: path.resolve(__dirname,'src/index.jsx'),
-        vendor: ['react', 'react-dom'] //需要进库的插件包
+        vendor: ['react', 'react-dom','redux','react-redux'] //需要进库的插件包
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

@@ -3,34 +3,53 @@
  * created on 28.03.2017
  */
 import React from 'react';
+import { createStore } from 'redux';
+import { connect } from 'react-redux';
+import todoApp from '../reducers/index';
+import { addTodo } from '../action/actions';
+
+let store = createStore(todoApp);
 
 class AddTodoList extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            items : this.props.data
-        };
-        this.changeState = this.changeState.bind(this);
-    }
-    changeState(e) {
-        for(var i =0 ; i < this.state.items.length; i++){
-            if(this.state.items[i].id === e.target.id/1){
-                this.state.items[i].isComplated = (this.state.items[i].isComplated === 'isComplated') ? 'noComplated' : 'isComplated';
-            }
-        }
-        this.setState(this.state);
-        e.stopPropagation();
-        e.preventDefault();
-    }
     render() {
         return (
             <div className = "addTodoList">
                 <ul>
-                    { this.state.items.map( (item,index) => <li key = { index } onClick = { this.changeState } id = { item.id } className = { item.isComplated + " " + item.visibility }> { item.text } </li> ) }
                 </ul>
             </div>
         );
     }
 };
 
+const getVisibility = (todos, filter) => {
+    switch (filter){
+        case "SHOW_ALL":
+            return todos;
+        case "SHOW_WAITDO":
+            return todos.filter( t => t.isComplated );
+        case "SHOW_ISCOMPLATED":
+            return todos.filter( t => !t.isComplated );
+    }
+};
+
+const mapStateToprops = (state) => {
+    return {
+        todos: getVisibility(state.todos,state.Filter)
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onTodoClick : (id) => {
+            dispatch(changState(id))
+        }
+    }
+};
+
+
+
+AddTodoList = connect(
+    mapStateToprops,
+    mapDispatchToProps
+)(AddTodoList);
 export default AddTodoList;
