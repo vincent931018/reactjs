@@ -3,6 +3,7 @@
  * created on 28.03.2017
  */
 import React from 'react';
+import _ from 'lodash';
 
 import AddTodoBtn from './addTodoBtn.jsx';
 import AddTodoList from './addTodoList.jsx';
@@ -15,9 +16,14 @@ class AddTodo extends React.Component {
             items:[]
         };
         this.handleData = this.handleData.bind(this);
+        this.reHandleData = this.reHandleData.bind(this);
     }
     handleData(data) {
         this.state.items.push(data);
+        this.setState(this.state.items);
+    }
+    reHandleData(data){
+        this.state.items = data;
         this.setState(this.state);
     }
     render() {
@@ -27,7 +33,7 @@ class AddTodo extends React.Component {
                 <div className = "add_title">我的待办事项</div>
                     <AddTodoBtn handleData = { this.handleData }/>
                     <AddTodoList data = { this.state.items }/>
-                    <SetVisibility/>
+                    <SetVisibility data = { this.state.items } reHandleData = { this.reHandleData }/>
                 </div>
             </div>
         );

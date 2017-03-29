@@ -21,13 +21,12 @@ class AddTodoList extends React.Component {
         this.setState(this.state);
         e.stopPropagation();
         e.preventDefault();
-        console.log(this.props.data);
     }
     render() {
         return (
             <div className = "addTodoList">
                 <ul>
-                    { this.state.items.map( (item) => <li onClick = { this.changeState } id = { item.id } className = { item.isComplated }> { item.text } </li> ) }
+                    { this.state.items.map( (item) => <li onClick = { this.changeState } id = { item.id } className = { item.isComplated + " " + item.visibility }> { item.text } </li> ) }
                 </ul>
             </div>
         );

@@ -19,7 +19,8 @@ class AddTodoBtn extends React.Component {
             var newData = {
                 'id' : idCount++,
                 'text' : this.refs.item_val.value,
-                'isComplated' : 'noComplated'
+                'isComplated' : 'noComplated',
+                'visibility' : 'block'
             }
             //this.state.items.push(newData);
             //var cur_items = this.state.items
