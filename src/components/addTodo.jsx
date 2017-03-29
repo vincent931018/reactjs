@@ -14,14 +14,19 @@ class AddTodo extends React.Component {
         this.state = {
             items:[]
         };
+        this.handleData = this.handleData.bind(this);
+    }
+    handleData(data) {
+        this.state.items.push(data);
+        this.setState(this.state);
     }
     render() {
         return (
             <div className = "addTodo">
                 <div className = "add_container">
                 <div className = "add_title">我的待办事项</div>
-                    <AddTodoBtn/>
-                    <AddTodoList/>
+                    <AddTodoBtn handleData = { this.handleData }/>
+                    <AddTodoList data = { this.state.items }/>
                     <SetVisibility/>
                 </div>
             </div>

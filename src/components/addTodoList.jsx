@@ -5,13 +5,29 @@
 import React from 'react';
 
 class AddTodoList extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            items : this.props.data
+        };
+        this.changeState = this.changeState.bind(this);
+    }
+    changeState(e) {
+        for(var i =0 ; i < this.state.items.length; i++){
+            if(this.state.items[i].id === e.target.id/1){
+                this.state.items[i].isComplated = (this.state.items[i].isComplated === 'isComplated') ? 'noComplated' : 'isComplated';
+            }
+        }
+        this.setState(this.state);
+        e.stopPropagation();
+        e.preventDefault();
+        console.log(this.props.data);
+    }
     render() {
         return (
             <div className = "addTodoList">
                 <ul>
-                    <li>起床</li>
-                    <li>吃饭</li>
-                    <li>睡觉</li>
+                    { this.state.items.map( (item) => <li onClick = { this.changeState } id = { item.id } className = { item.isComplated }> { item.text } </li> ) }
                 </ul>
             </div>
         );

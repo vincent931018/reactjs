@@ -4,6 +4,8 @@
  */
 import React from 'react';
 
+let idCount = 0;
+
 class AddTodoBtn extends React.Component {
     constructor(props){
         super(props);
@@ -12,9 +14,20 @@ class AddTodoBtn extends React.Component {
         };
         this.addItem = this.addItem.bind(this);
     }
-    addItem() {
-        var cur_items = this.state.items.push(this.refs.item_val.value);
-        this.props.items = { items : cur_items };
+    addItem(data) {
+        if(this.refs.item_val.value){
+            var newData = {
+                'id' : idCount++,
+                'text' : this.refs.item_val.value,
+                'isComplated' : 'noComplated'
+            }
+            //this.state.items.push(newData);
+            //var cur_items = this.state.items
+            this.props.handleData(newData);
+            this.refs.item_val.value = "";
+        }else{
+            alert("请输入正确的待办事项！");
+        }
     }
     render() {
         return (
