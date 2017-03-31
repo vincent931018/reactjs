@@ -23,7 +23,6 @@ class AddTodoList extends React.Component {
             this.setState({
                 data : filterData(store.getState()).todos
             })
-            //mapStateToProps(store.getState());
         });
     }
     onTodoClick(e) {

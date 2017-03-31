@@ -85,3 +85,95 @@ html, body {
     padding-left: 1rem; }
   .formArea ::-webkit-input-placeholder {
     font-family: huakang; }
+
+.addTodo {
+  padding: 1rem 1rem 1rem 1rem;
+  height: 95%; }
+  .addTodo .add_title {
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 2rem; }
+  .addTodo .add_container {
+    width: 100%;
+    height: 100%;
+    border: 0.1rem #000 solid;
+    border-radius: 2rem; }
+
+.addTodoBtn .add_value {
+  width: 50%;
+  height: 4rem;
+  float: left;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  border: 0.1rem green solid;
+  border-radius: 2rem;
+  outline: none;
+  padding-left: 2rem;
+  font-size: 2rem;
+  line-height: 4rem;
+  font-family: huakang; }
+
+.addTodoBtn .add_waitDo {
+  width: 30%;
+  height: 4rem;
+  line-height: 4rem;
+  float: right;
+  text-align: center;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  border: 0.1rem red solid;
+  color: green;
+  border-radius: 2rem;
+  font-size: 1.5rem; }
+
+.addTodoList {
+  margin-top: 9rem;
+  overflow-y: auto;
+  padding-left: 2rem;
+  height: 60%; }
+  .addTodoList ul {
+    font-size: 2rem; }
+    .addTodoList ul li {
+      margin-top: 1rem; }
+  .addTodoList .isComplated {
+    text-decoration: line-through; }
+  .addTodoList .none {
+    display: none; }
+
+.setVisibility {
+  position: absolute;
+  bottom: 4rem;
+  height: 6rem;
+  padding-left: 2rem; }
+  .setVisibility .type {
+    width: 100%;
+    height: 6rem;
+    padding-top: 1rem; }
+  .setVisibility .item {
+    float: left;
+    line-height: 4rem;
+    font-size: 2rem;
+    letter-spacing: -0.1rem; }
+  .setVisibility .nomal {
+    border: 0.1rem #222222 solid;
+    border-radius: 1.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+    margin-left: 1rem;
+    float: left;
+    line-height: 4rem;
+    font-size: 2rem;
+    letter-spacing: -0.1rem; }
+  .setVisibility .green {
+    border: 0;
+    color: #fff;
+    background-color: green;
+    border-radius: 1.5rem;
+    padding: 0 0.5rem 0 0.5rem;
+    margin-left: 1rem;
+    float: left;
+    line-height: 4rem;
+    font-size: 2rem;
+    letter-spacing: -0.1rem; }
