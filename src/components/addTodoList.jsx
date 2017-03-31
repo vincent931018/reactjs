@@ -3,53 +3,37 @@
  * created on 28.03.2017
  */
 import React from 'react';
-import { createStore } from 'redux';
 import { connect } from 'react-redux';
-import todoApp from '../reducers/index';
-import { addTodo } from '../action/actions';
-
-let store = createStore(todoApp);
+import store from '../common/store';
 
 class AddTodoList extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            data : []
+        }
+    }
+    componentDidMount() {
+        store.subscribe( () => {
+            this.setState({
+                data: store.getState().todos
+            })
+        })
+    }
+    onTodoClick(id) {
+        store.dispatch(changeTodo(id));
+    }
     render() {
         return (
             <div className = "addTodoList">
                 <ul>
+                    { this.state.data.map( t => <li key = { t.id } className = { t.isComplated ? 'isComplated' : ''} onClick = { this.onTodoClick }>{t.text}</li>) }
                 </ul>
             </div>
         );
     }
 };
 
-const getVisibility = (todos, filter) => {
-    switch (filter){
-        case "SHOW_ALL":
-            return todos;
-        case "SHOW_WAITDO":
-            return todos.filter( t => t.isComplated );
-        case "SHOW_ISCOMPLATED":
-            return todos.filter( t => !t.isComplated );
-    }
-};
+AddTodoList = connect()(AddTodoList);
 
-const mapStateToprops = (state) => {
-    return {
-        todos: getVisibility(state.todos,state.Filter)
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onTodoClick : (id) => {
-            dispatch(changState(id))
-        }
-    }
-};
-
-
-
-AddTodoList = connect(
-    mapStateToprops,
-    mapDispatchToProps
-)(AddTodoList);
 export default AddTodoList;

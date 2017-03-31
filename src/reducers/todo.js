@@ -2,11 +2,7 @@
  * @author caowencheng <845982120@qq.com>
  * created on 29.03.2017
  */
-const initialState = {
-    text : "",
-    id : 0,
-    isComplated : false
-}
+const initialState = {};
 
 const todo = (state = initialState,action) => {
     switch (action.type) {
@@ -24,7 +20,7 @@ const todo = (state = initialState,action) => {
                 isComplated : !state.isComplated
             });
         default :
-            return {};
+            return state;
     };
 };
 
@@ -37,7 +33,7 @@ const todos = (state = initialState,action) => {
         case "CHANGE_TODO":
             state.map( t => todo(t,action) );
         default :
-            return {};
+            return [...state];
     };
 };
 

@@ -8,6 +8,8 @@ import AddTodoBtn from './addTodoBtn.jsx';
 import AddTodoList from './addTodoList.jsx';
 import SetVisibility from './setVisibility.jsx';
 
+import store from '../common/store';
+
 class AddTodo extends React.Component {
     render() {
         return (

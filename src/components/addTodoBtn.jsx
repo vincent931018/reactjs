@@ -3,19 +3,20 @@
  * created on 28.03.2017
  */
 import React from 'react';
-import { createStore } from 'redux';
 import { connect } from 'react-redux';
-import todoApp from '../reducers/index';
 import { addTodo } from '../action/actions';
+import store from '../common/store';
 
 let input;
-let store = createStore(todoApp);
 
 class AddTodoBtn extends React.Component {
     addTodo() {
         if(input.value){
             store.dispatch(addTodo(input.value));
             console.log(store.getState());
+            input.value = '';
+        }else{
+            alert('请输入正确的待办事项！');
         }
     }
     render() {
