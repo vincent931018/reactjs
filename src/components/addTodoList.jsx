@@ -8,19 +8,23 @@ import store from '../common/store';
 
 import { changeTodo } from '../action/actions';
 
+let curruntData = {setVisibility : '',todos : []};
+
 class AddTodoList extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             data : []
-        }
+        };
+        this.onTodoClick = this.onTodoClick.bind(this);
     }
     componentDidMount() {
         store.subscribe( () => {
             this.setState({
-                data : store.getState().todos
+                data : filterData(store.getState()).todos
             })
-        })
+            //mapStateToProps(store.getState());
+        });
     }
     onTodoClick(e) {
         store.dispatch(changeTodo(e.target.id/1));
@@ -35,6 +39,32 @@ class AddTodoList extends React.Component {
         );
     }
 };
+
+const filterData = data => {
+    switch (data.setVisibility) {
+        case "SHOW_ALL" :
+            return data;
+            break;
+        case "SHOW_WAITDO" :
+            curruntData.setVisibility = 'SHOW_WAITDO';
+            curruntData.todos = [];
+            data.todos.map( t => {
+                if(!t.isComplated){curruntData.todos.push( t )}
+            });
+            return curruntData;
+            break;
+        case "SHOW_COMPLATED" :
+            curruntData.setVisibility = 'SHOW_WAITDO';
+            curruntData.todos = [];
+            data.todos.map( t => {
+                if(t.isComplated){curruntData.todos.push( t )}
+            });
+            return curruntData;
+            break;
+        default :
+            return data;
+    }
+}
 
 AddTodoList = connect()(AddTodoList);
 
