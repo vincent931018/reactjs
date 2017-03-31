@@ -6,6 +6,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import store from '../common/store';
 
+import { changeTodo } from '../action/actions';
+
 class AddTodoList extends React.Component {
     constructor(props){
         super(props);
@@ -16,18 +18,18 @@ class AddTodoList extends React.Component {
     componentDidMount() {
         store.subscribe( () => {
             this.setState({
-                data: store.getState().todos
+                data : store.getState().todos
             })
         })
     }
-    onTodoClick(id) {
-        store.dispatch(changeTodo(id));
+    onTodoClick(e) {
+        store.dispatch(changeTodo(e.target.id/1));
     }
     render() {
         return (
             <div className = "addTodoList">
                 <ul>
-                    { this.state.data.map( t => <li key = { t.id } className = { t.isComplated ? 'isComplated' : ''} onClick = { this.onTodoClick }>{t.text}</li>) }
+                    { this.state.data.map( t => <li key = { t.id } id = { t.id } className = { t.isComplated ? 'isComplated' : ''} onClick = { this.onTodoClick }>{t.text}</li>) }
                 </ul>
             </div>
         );

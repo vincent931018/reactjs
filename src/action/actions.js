@@ -11,7 +11,7 @@ const addTodo = (text) => ({
 });
 
 const changeTodo = (id) => ({
-    type : "CHANGE_TOD",
+    type : "CHANGE_TODO",
     id
 });
 

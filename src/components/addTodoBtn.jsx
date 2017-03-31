@@ -13,7 +13,6 @@ class AddTodoBtn extends React.Component {
     addTodo() {
         if(input.value){
             store.dispatch(addTodo(input.value));
-            console.log(store.getState());
             input.value = '';
         }else{
             alert('请输入正确的待办事项！');
