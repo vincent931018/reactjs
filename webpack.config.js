@@ -23,7 +23,11 @@ module.exports = {
         // 路径别名
         alias: {
             '@': path.resolve(__dirname, 'src'),
-            'component': path.resolve(__dirname, 'src/components')
+            'pages': path.resolve(__dirname, 'src/pages'),
+            'state': path.resolve(__dirname, 'src/state'),
+            'common': path.resolve(__dirname, 'src/common'),
+            'static': path.resolve(__dirname, 'src/static'),
+            'components': path.resolve(__dirname, 'src/components')
         }
     },
     plugins: [

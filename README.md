@@ -5,6 +5,9 @@
 ├── index.html				//项目主页面入口
 ├── index.jsx				//项目主入口
 ├── package.json			//配置文件
+├── routes					//项目路由配置文件
+├── state					//项目状态管理文件
+├── pages					//页面文件文件
 ├── src						//项目源文件
 │   ├── App.jsx				//源文件主入口
 │   ├── components			//项目组件库
@@ -26,7 +29,20 @@ cnpm i(淘宝镜像库)
 ```
 npm run dev
 ```
+##路由配置
+```
+./src/routes/Routes.jsx 进行配置
+```
+
+##ajax通讯
+```
+./src/common/http.js 进行拦截器配置
+继承Base基类
+this.getRespons(url,params)获取数据
+```
+
 ##项目打包
 ```
 npm run build
 ```
+
