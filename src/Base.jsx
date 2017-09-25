@@ -1,17 +1,24 @@
 //基类 供组件继承
 import React, { Component } from 'react'
+import { Link, Route, Redirect } from 'react-router-dom'
 import axiox from 'common/http'
 
 class Base extends Component {
     constructor(props){
-        super(props)
+        super(props);
+        //定义全局变量 eg.
+        this.auth = 'caowencheng';
     }
     getRespons(url, params){
-        axiox.post(url, params).then(function(res) {
-            console.log(res);
-        })
-        .catch(e => {
-            console.log('网络出错了！');
+        return new Promise(function(resolve, reject) {
+             axiox.post(url, params).then(function(res) {
+                console.log('----返回参数----' + JSON.stringify(res));
+                resolve(res);
+            })
+            .catch(e => {
+                console.log('----请求错误----' + JSON.stringify(e));
+                resolve(e);
+            })
         })
     }
 }

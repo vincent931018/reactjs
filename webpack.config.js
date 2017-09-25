@@ -9,11 +9,14 @@ var path = require('path')
 module.exports = {
     entry: {
         //入口文件
-        app: './index.jsx',
+        app: [
+            './index.jsx' // 这里是你的入口文件
+        ],
         //公共文件
-        ventor: ['react', 'react-dom']
+        ventor: ['react', 'react-dom', 'react-router-dom', 'redux', 'react-redux', 'axios']
     },
     output: {
+        publicPath: '/',
         path: path.resolve(__dirname, 'dist'), // 必须使用绝对地址，输出文件夹
         filename: "./static/js/[name]-[hash].js" // 打包后输出文件的文件名
     },
@@ -29,6 +32,12 @@ module.exports = {
             'static': path.resolve(__dirname, 'src/static'),
             'components': path.resolve(__dirname, 'src/components')
         }
+    },
+    devServer: {
+        port: 3333,
+        hot: true,
+        open: true,
+        inline: true
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
@@ -68,7 +77,11 @@ module.exports = {
         new CopyWebpackPlugin([{
             from: path.resolve(__dirname, 'src/static/favicon.ico'),
             to: './static'
-        }])
+        }]),
+        //开启全局的模块热替换(HMR)
+        new webpack.HotModuleReplacementPlugin(),
+        //保证出错时页面不阻塞，且会在编译结束后报错
+        new webpack.NoEmitOnErrorsPlugin()
     ],
     module: {
         rules: [{

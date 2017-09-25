@@ -16,8 +16,8 @@ axios.interceptors.request.use(
     config => {
         return config;
     },
-    err => {
-        return Promise.reject(err);
+    error => {
+        return Promise.reject(error);
     });
 
 // http response 拦截器
@@ -26,7 +26,13 @@ axios.interceptors.response.use(
         return response.data;
     },
     error => {
-        return Promise.reject(error.response.data)
+        let errResult = {
+            isSuccess: 0,
+            errorCode: '0000',
+            errorMsg: '连接服务器失败',
+            result: null
+        }
+        return Promise.reject(errResult);
     });
 
 export default axios;

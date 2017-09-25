@@ -7,6 +7,14 @@ import bg from './bg.jpg'
 class First extends Base {
 	constructor(props){
 		super(props);
+		this.getData = this.getData.bind(this);
+	}
+	//ajax获取服务端数据
+	getData() {
+		console.log(style)
+		this.getRespons('/test',{}).then(function(res) {
+			console.log(JSON.stringify(res));
+		})
 	}
 	render() {
 		const { count, handleClick } = this.props; 
@@ -15,6 +23,7 @@ class First extends Base {
 				First
 				<img src={ bg } onClick={ handleClick }/>
 				{ count }
+				<button onClick={ this.getData }> ajax </button>
 			</div>
 		);
 	}
