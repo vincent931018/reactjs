@@ -1,7 +1,7 @@
 import React from 'react'
 import Base from '@/Base'
 import { connect } from 'react-redux'
-import style from './First.scss'
+import './First.scss'
 import bg from './bg.jpg'
 
 class First extends Base {
@@ -11,7 +11,6 @@ class First extends Base {
 	}
 	//ajax获取服务端数据
 	getData() {
-		console.log(style)
 		this.getRespons('/test',{}).then(function(res) {
 			console.log(JSON.stringify(res));
 		})
@@ -19,7 +18,7 @@ class First extends Base {
 	render() {
 		const { count, handleClick } = this.props; 
 		return (
-			<div className={ style.first }>
+			<div className='first'>
 				First
 				<img src={ bg } onClick={ handleClick }/>
 				{ count }

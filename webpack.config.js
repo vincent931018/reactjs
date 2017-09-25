@@ -97,14 +97,7 @@ module.exports = {
             loader: ExtractTextPlugin.extract({
                 // 必须这样写，否则会报错
                 fallback: 'style-loader',
-                use: [{
-                    loader: 'css-loader',
-                    options: {
-                        modules: true
-                    }
-                }, {
-                    loader: 'sass-loader'
-                }]
+                use: 'css-loader!postcss-loader!sass-loader'
             })
         }, {
             // 图片格式正则
