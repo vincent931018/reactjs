@@ -1,8 +1,29 @@
 import React from 'react'
 import Base from '@/Base'
 import { connect } from 'react-redux'
-import './First.scss'
+import styled from 'styled-components';
+import style from './First.scss'
 import bg from './bg.jpg'
+
+//编写行内样式
+const Button = styled.button`
+  	display: block;
+	color: palevioletred;
+	font-size: 1em;
+	margin: 1em;
+	padding: 0.25em 1em;
+	border: 2px solid palevioletred;
+	border-radius: 3px;
+`;
+const Div = styled.div`
+  	display: block;
+	color: #ccc;
+	font-size: 1em;
+	margin: 1em;
+	padding: 0.25em 1em;
+	border: 2px solid palevioletred;
+	border-radius: 3px;
+`;
 
 class First extends Base {
 	constructor(props){
@@ -18,11 +39,12 @@ class First extends Base {
 	render() {
 		const { count, handleClick } = this.props; 
 		return (
-			<div className='first'>
+			<div className={ style.first }>
 				First
 				<img src={ bg } onClick={ handleClick }/>
 				{ count }
-				<button onClick={ this.getData }> ajax </button>
+				<Button onClick={ this.getData }> ajax </Button>
+				<Div>123</Div>
 			</div>
 		);
 	}
