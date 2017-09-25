@@ -1,6 +1,5 @@
 //基类 供组件继承
 import React, { Component } from 'react'
-import { Link, Route, Redirect } from 'react-router-dom'
 import axiox from 'common/http'
 
 class Base extends Component {

@@ -1,6 +1,7 @@
 import React from 'react'
 import Base from '@/Base'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 import style from './First.scss'
 import bg from './bg.jpg'
@@ -23,11 +24,19 @@ const Div = styled.div`
 	padding: 0.25em 1em;
 	border: 2px solid palevioletred;
 	border-radius: 3px;
+	text-align: center;
+	a{
+		text-decoration: none;
+		color: #ccc;
+	}
 `;
 
 class First extends Base {
 	constructor(props){
 		super(props);
+		this.state = {
+			redirect: false
+		}
 		this.getData = this.getData.bind(this);
 	}
 	//ajax获取服务端数据
@@ -44,7 +53,7 @@ class First extends Base {
 				<img src={ bg } onClick={ handleClick }/>
 				{ count }
 				<Button onClick={ this.getData }> ajax </Button>
-				<Div>123</Div>
+				<Div><Link to="/404?12">页面跳转</Link></Div>
 			</div>
 		);
 	}
